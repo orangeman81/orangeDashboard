@@ -1,0 +1,14 @@
+form {
+    &>footer {
+        &>div {
+            display: flex;
+        }
+        display: flex;
+        margin-top: 48px;
+        align-items: center;
+        justify-content: space-between;
+        .btn-fab:first-child {
+            margin-right: 16px;
+        }
+    }
+}

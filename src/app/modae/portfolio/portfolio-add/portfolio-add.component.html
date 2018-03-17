@@ -1,0 +1,6 @@
+<app-portfolio-form 
+    [formData]="portfolio" 
+    (formValue)="onSubmit($event)" 
+    (heroImage)="uploads.getFile($event)"
+    (gallery)="uploads.getGallery($event)">
+</app-portfolio-form>

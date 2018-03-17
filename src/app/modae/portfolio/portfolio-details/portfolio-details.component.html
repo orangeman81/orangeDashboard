@@ -1,0 +1,8 @@
+<a class="btn-fab floating" (click)="toggleView()"><i class="material-icons">{{icon}}</i></a>
+<app-portfolio-form *ngIf="!toggle"
+    [formData]="details" 
+    (formValue)="update($event, details._id)"
+    (heroImage)="uploads.getFile($event)"
+    (gallery)="uploads.getGallery($event)">
+</app-portfolio-form>
+<app-portfolio-details-view *ngIf="toggle" [details]="details" (deleteImg)="removeImg($event)"></app-portfolio-details-view>

@@ -1,0 +1,5 @@
+<a routerLink="add" class="btn-fab floating"><i class="material-icons">add</i></a>
+<app-panel [data]="blogList | async" (delete)="delete($event)"></app-panel>
+<footer>
+    <a routerLink="/modae" class="btn">back</a>
+</footer>

@@ -1,0 +1,9 @@
+main {
+    min-height: 360px;
+}
+
+.card,
+.tile,
+form {
+    animation: slide-in .3s ease;
+}

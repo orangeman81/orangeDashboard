@@ -1,0 +1,35 @@
+.questions {
+    margin-top: 1.5rem;
+    li {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, .12);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+            margin-left: 16px;
+        }
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+            button {
+                margin-top: 16px;
+                align-self: flex-end;
+            }
+        }
+    }
+}
+
+form {
+    &>footer {
+        &>div {
+            display: flex;
+        }
+        display: flex;
+        margin-top: 48px;
+        align-items: center;
+        justify-content: space-between;
+        .btn-fab:first-child {
+            margin-right: 16px;
+        }
+    }
+}

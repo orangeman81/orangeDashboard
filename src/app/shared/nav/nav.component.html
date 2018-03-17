@@ -1,0 +1,72 @@
+<nav id="main-nav">
+  <ul>
+    <li>
+      <a class="menu" (click)="open()">
+        <i class="material-icons">menu</i>
+      </a>
+    </li>
+    <li>
+      <a href="">ultimo accesso</a>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <a routerLink="/home">
+        <i class="material-icons">home</i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/modae">
+        <i class="material-icons">book</i>
+      </a>
+    </li>
+    <li>
+      <a href="">
+        <i class="material-icons">account_balance</i>
+      </a>
+    </li>
+  </ul>
+  <ul class="sideNav">
+    <li>
+      <a routerLink="/home">
+        <i class="material-icons">home</i>&ensp;Home
+      </a>
+    </li>
+    <li>
+      <a routerLink="/modae">
+        <i class="material-icons">book</i>&ensp;Moda è
+      </a>
+      <a class="accordion">
+        <i class="material-icons">add</i>
+      </a>
+      <ul>
+        <li>
+          <a routerLink="/modae/designers">Designers</a>
+        </li>
+        <li>
+          <a href="">Blog</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="">
+        <i class="material-icons">account_balance</i>&ensp;Museo</a>
+      <a class="accordion">
+        <i class="material-icons">add</i>
+      </a>
+      <ul>
+        <li>
+          <a href="">info</a>
+        </li>
+        <li>
+          <a href="">events</a>
+        </li>
+      </ul>
+    </li>
+    <li *ngIf="auth.authenticated">
+      <a routerLink (click)="auth.logOut()">
+        <i class="material-icons">exit_to_app</i>&ensp;Logout
+      </a>
+    </li>
+  </ul>
+</nav>

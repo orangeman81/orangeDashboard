@@ -1,0 +1,10 @@
+// push
+@for $i from 1 through 5 {
+    $lesser: $i - 1;
+    .push-#{$i} {
+        @extend .z-depth-#{$i};
+        &:hover {
+            @extend .z-depth-#{$lesser};
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@import "../../assets/sass/variables";
+
+main {
+    height: 90%;
+    min-height: 600px;
+    width: 90%;
+    max-height: 960px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    @media screen and (min-width: $tablet) {
+        height: 60%;
+        min-height: 600px;
+        width: 60%;
+    }
+    @media screen and (min-width: $desktop) {
+        height: 40%;
+        min-height: 600px;
+        width: 40%;
+    }
+    form {
+        width: 100%;
+        legend {
+            font-size: $h4-size;
+            text-align: center;
+            font-weight: $bold;
+            color: lighten($gray, 15%);
+            span {
+                color: $color;
+            }
+            img {
+                height: 1.8em;
+                transform: translateY(.25em);
+            }
+        }
+        button {
+            display: block;
+            margin: 1rem auto 0;
+        }
+    }
+}

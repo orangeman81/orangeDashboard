@@ -1,0 +1,45 @@
+.dropdown {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    font-size: 1rem;
+    background-color: $white;
+    border-radius: $radius;
+    @extend .z-depth-2;
+    @extend .ease;
+    background-clip: padding-box;
+    opacity: 0;
+    transform-origin: right top 0px;
+    transform: scale(0);
+    ul {
+        min-width: 124px;
+        padding: 8px 0;
+        li {
+            cursor: pointer;
+            padding: 0 16px;
+            line-height: 48px;
+            height: 48px;
+            transition: inherit;
+            transform: translateY(-30%);
+            &:hover {
+                background-color: #eee;
+            }
+            a {
+                display: flex;
+                align-items: center;
+                i {
+                    margin-right: .5rem;
+                }
+            }
+        }
+    }
+    &.active {
+        opacity: 1;
+        transform: scale(1);
+        li {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}

@@ -1,0 +1,81 @@
+<form #portfolioForm="ngForm" (submit)="formValue.emit(formData)">
+    <fieldset>
+        <div class="row">
+            <div class="col m6 s12">
+                <div class="form-group">
+                    <input type="text" name="name" required [(ngModel)]="formData.name">
+                    <label for="">Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="surname" required [(ngModel)]="formData.surname">
+                    <label for="">Surname</label>
+                </div>
+            </div>
+            <div class="col m6 s12">
+                <div class="form-group">
+                    <input type="email" name="email" required [(ngModel)]="formData.email">
+                    <label for="">Email</label>
+                </div>
+                <div class="form-group select">
+                    <input type="text" name="profession" required readonly [(ngModel)]="formData.profession">
+                    <div class="menu">
+                        <span class="dropdown-trigger">
+                            <i class="material-icons">expand_more</i>
+                        </span>
+                        <div class="dropdown">
+                            <ul>
+                                <li *ngFor="let option of formSelect" (click)="optionValue(option)">
+                                    {{option}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="form-group">
+                    <textarea name="description" rows="2" required [(ngModel)]="formData.description"></textarea>
+                    <label for="">Description</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" #question required>
+                    <label for="">Question</label>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" #answer required (blur)="addQuestion(question.value, answer.value); answer.value = ''; question.value=''"></textarea>
+                    <label for="">Answer</label>
+                </div>
+                <ul class="questions">
+                    <li *ngFor="let q of formData.questions; let i = index">
+                        <span>
+                            <div class="title">{{q.question}}</div>
+                            <p>
+                                {{q.answer}}
+                            </p>
+                        </span>
+                        <button (click)="deleteQuestion(i)">
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </fieldset>
+    <footer>
+        <div>
+            <div class="file-field">
+                <div class="btn-fab">
+                    <i class="material-icons">add_a_photo</i>
+                    <input type="file" (change)="heroImage.emit($event)" required accept=".jpg">
+                </div>
+            </div>
+            <div class="file-field">
+                <div class="btn-fab">
+                    <i class="material-icons">add_to_photos</i>
+                    <input type="file" multiple (change)="gallery.emit($event)" accept=".jpg, .gif">
+                </div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="!portfolioForm.form.valid">submit</button>
+    </footer>
+</form>

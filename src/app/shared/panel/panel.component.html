@@ -1,0 +1,28 @@
+<ul>
+  <li *ngFor="let item of data; let i = index">
+    <div class="panel-header" (click)="toggle(i)">
+      <header *ngIf="item.name">
+        <span class="panel-title">
+          {{item.name}} {{item.surname}}
+        </span>
+        <time>{{item.createdAt | date: "shortDate"}}</time>
+      </header>
+      <header *ngIf="item.title">
+        <span class="panel-title">
+          {{item.title}}
+        </span>
+        <time>{{item.createdAt | date: "shortDate"}}</time>
+      </header>
+      <i class="material-icons">expand_more</i>
+    </div>
+    <div class="panel-content">
+      <p>
+        {{item.description | truncate: 350}}
+      </p>
+      <footer>
+        <a (click)="delete.emit({id: item._id, photo: item.heroImage, gallery: item.gallery})">Delete</a>
+        <a routerLink="{{item._id}}">details</a>
+      </footer>
+    </div>
+  </li>
+</ul>

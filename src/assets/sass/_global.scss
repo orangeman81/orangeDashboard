@@ -1,0 +1,67 @@
+//user agent overrides
+body,
+figure {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    li {
+        list-style: none;
+    }
+}
+
+// images
+main>figure,
+section>figure {
+    margin: 1.5rem auto;
+    img {
+        @extend .z-depth-1;
+    }
+}
+
+figure {
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+header#hero {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: url("../../assets/img/leaves_orange.svg") -58px -58px / 600px no-repeat, darken($color, 10%), ;
+    background-attachment: fixed;
+    h1,
+    p {
+        color: $white;
+        text-shadow: $elevation;
+    }
+}
+
+footer#main-footer {
+    position: relative;
+    padding-bottom: 6rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    background: darken($gray, 40%);
+    display: flex;
+    &,
+    a {
+        color: $white;
+    }
+    .info {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        width: 100%;
+        background: rgba(0, 0, 0, .1);
+    }
+}

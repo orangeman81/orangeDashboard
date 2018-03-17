@@ -1,0 +1,111 @@
+html {
+    font-size: 13px;
+    font-weight: $regular;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    color: $off-black;
+    @media screen and (min-width: 0) {
+        font-size: 14px;
+    }
+    @media screen and (min-width: $tablet) {
+        font-size: 14.5px;
+    }
+    @media screen and (min-width: $desktop) {
+        font-size: 15px;
+    }
+}
+
+// headings
+h1 {
+    font-size: $h1-size;
+    font-weight: $light;
+}
+
+h2 {
+    font-size: $h2-size;
+}
+
+h3 {
+    font-size: $h3-size;
+}
+
+h4 {
+    font-size: $h4-size;
+}
+
+h5 {
+    font-size: $h5-size;
+}
+
+h6 {
+    font-size: $h6-size;
+}
+
+.title {
+    font-size: $title-size;
+    font-weight: $bold;
+}
+
+small {
+    font-size: .8em;
+}
+
+strong {
+    font-weight: $bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title {
+    margin: .5em 0 .25em;
+    line-height: 1.1;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: inherit;
+}
+
+p {
+    margin: .25rem 0;
+}
+
+header {
+    p:first-of-type {
+        font-size: $h4-size;
+        margin: 0 0 1.5em;
+    }
+}
+
+time {
+    font-size: 1rem;
+    font-weight: $medium;
+    color: lighten($off-black, 40%);
+}
+
+// links
+a {
+    text-decoration: none;
+    cursor: pointer;
+    &:not(.btn):not(.btn-fab):not(.tile) {
+        color: $color;
+        font-weight: $medium;
+        @extend .ease;
+        &:hover {
+            color: darken($color, 15%);
+        }
+    }
+}
+
+// hr
+hr {
+    border: 1px solid rgba(0,0,0,.12);
+}

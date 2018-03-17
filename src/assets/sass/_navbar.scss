@@ -1,0 +1,114 @@
+nav {
+    height: 60px;
+    background: $navbarColor;
+    padding: 0rem 1.5rem;
+    @extend .d-flex;
+    @extend .z-depth-1;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav#main-nav {
+    >ul:not(.sideNav) {
+        @extend .d-flex;
+        align-items: center;
+        li:not(:first-of-type) {
+            padding-left: 1rem;
+        }
+    }
+    ul.sideNav {
+        @extend .ease;
+        >li {
+            >a {
+                display: flex;
+                align-items: center;
+            }
+            @extend .d-flex;
+            line-height: 3;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            i {
+                font-weight: inherit;
+            }
+            ul {
+                max-height: 0;
+                overflow-y: hidden;
+                flex: 0 1 100%;
+                padding-left: .75rem;
+                transition: max-height .3s ease-out;
+                animation: slide-out .3s ease-in;
+                &.open {
+                    animation: slide-in .3s ease-out;
+                    max-height: 10rem;
+                    overflow-y: visible;
+                }
+            }
+        }
+        position: fixed;
+        width: 256px;
+        left: 0;
+        top: 0;
+        margin: 0;
+        height: calc(100% + 60px);
+        padding: 1rem 2rem;
+        background-color: #fff;
+        z-index: 999;
+        overflow-y: auto;
+        will-change: transform;
+        backface-visibility: hidden;
+        transform: translateX(-105%);
+        flex-direction: column;
+        &.open {
+            transform: translateX(0);
+        }
+    }
+    .menu {
+        @extend .d-flex;
+        font-size: $h4-size;
+        font-weight: $bold;
+        i {
+            font-size: inherit;
+        }
+    }
+    i {
+        font-size: 1.5em;
+    }
+}
+
+nav#searchbar {
+    margin-top: 1.5rem;
+    @extend .ease;
+    label {
+        display: flex;
+        align-items: center;
+        padding-right: 1rem;
+        color: $gray;
+        transition: inherit;
+        i {
+            font-size: $h4-size;
+        }
+    }
+    input {
+        flex: 1 0 auto;
+    }
+    &.active {
+        background: darken($color, 10%);
+        label {
+            color: $white;
+            transform: scale(1.2) translateX(.25rem);
+        }
+        input {
+            color: $white;
+        }
+    }
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 997;
+}

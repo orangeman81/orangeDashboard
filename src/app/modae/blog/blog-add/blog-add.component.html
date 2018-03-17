@@ -1,0 +1,6 @@
+<app-blog-form 
+    [formData]="blog" 
+    (formValue)="onSubmit($event)" 
+    (heroImage)="uploads.getFile($event)"
+    (gallery)="uploads.getGallery($event)">
+</app-blog-form>
